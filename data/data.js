@@ -22,3 +22,10 @@ export const data = {
         ]
     }
 }
+
+function deleteTask(taskId) {
+    // const tasks = data.todolist.tasks;
+    // const filteredTasks = tasks.filter(task => task.id !== taskId);
+    // data.todolist.tasks = filteredTasks;
+    data.todolist.tasks = data.todolist.tasks.filter(task => task.id !== taskId);
+}
