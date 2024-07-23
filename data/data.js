@@ -25,7 +25,9 @@ export const data = {
         isOpen: false   
     },
     editTaskDialog: {
-        isopen: false
+        isopen: false,
+        taskId: undefined,
+        taskTitle: ""
     }
 }
 
