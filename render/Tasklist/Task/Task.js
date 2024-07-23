@@ -7,7 +7,7 @@ export function Task(task) {
     container.append(
         task.title, 
         Button("Delete", () => deleteTask(task.id)),
-        Button("Edit", () => openEditTaskDialog(task.id)),
+        Button("Edit", () => openEditTaskDialog(task.id, task.title)),
     );
 
     return container;

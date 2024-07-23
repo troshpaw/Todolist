@@ -37,6 +37,7 @@ export function subscribe(subscriber) {
     changeDataCallback = subscriber;
 }
 
+
 // CRUD
 export function deleteTask(taskId) {
     // const tasks = data.todolist.tasks;
@@ -61,9 +62,10 @@ export function addTask(title) {
 export function editTask(taskId, newTitle) {
     const task = data.todolist.tasks.find(task => task.id === taskId);
     task.title = newTitle;
-     
+
     changeDataCallback();
 }
+
 
 // UI
 export function openAddNewTaskDialog() {
@@ -79,9 +81,12 @@ export function closeAddNewTaskDialog() {
 }
 
 
-export function openEditTaskDialog() {
+export function openEditTaskDialog(taskId, taskTitle) {
     data.editTaskDialog.isOpen = true;
-    
+
+    data.editTaskDialog.taskId = taskId;
+    data.editTaskDialog.taskTitle = taskTitle;
+
     changeDataCallback();
 }
 
