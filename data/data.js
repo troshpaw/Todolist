@@ -52,16 +52,39 @@ export function addTask(title) {
     }
 
     data.todolist.tasks.push(newTask);
+    
+    changeDataCallback();
+}
+
+export function editTask(taskId, newTitle) {
+    const task = data.todolist.tasks.find(task => task.id === taskId);
+    task.title = newTitle;
+     
     changeDataCallback();
 }
 
 // UI
 export function openAddNewTaskDialog() {
     data.addNewTaskDialog.isOpen = true;
+    
     changeDataCallback();
 }
 
 export function closeAddNewTaskDialog() {
     data.addNewTaskDialog.isOpen = false;
+    
+    changeDataCallback();
+}
+
+
+export function openEditTaskDialog() {
+    data.editTaskDialog.isOpen = true;
+    
+    changeDataCallback();
+}
+
+export function closeEditTaskDialog() {
+    data.editTaskDialog.isOpen = false;
+    
     changeDataCallback();
 }

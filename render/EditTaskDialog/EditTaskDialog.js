@@ -1,5 +1,7 @@
 import { data } from "../../data/data.js";
 import { Button } from "../Common/Button/Button.js";
+import { editTask } from "../../data/data.js";
+import { closeEditTaskDialog } from "../../data/data.js";
 
 export function EditTaskDialog(taskId) {
     const container = document.createElement("dialog");
@@ -13,8 +15,8 @@ export function EditTaskDialog(taskId) {
     container.append(
         titleElement, 
         inputElement, 
-        Button("Save", () => addTask(inputElement.value)), 
-        Button("Cancel", () => closeAddNewTaskDialog())
+        Button("Save", () => editTask(taskId, inputElement.value)), 
+        Button("Cancel", () => closeEditTaskDialog())
     );
 
     return container;

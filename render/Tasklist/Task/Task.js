@@ -1,5 +1,6 @@
 import { Button } from "../../Common/Button/Button.js";
 import { deleteTask } from "../../../data/data.js";
+import { openEditTaskDialog } from "../../../data/data.js";
 import { EditTaskDialog } from "../../EditTaskDialog/EditTaskDialog.js";
 
 export function Task(task) {
@@ -7,7 +8,8 @@ export function Task(task) {
     container.append(
         task.title, 
         Button("Delete", () => deleteTask(task.id)),
-        Button("Edit", () => EditTaskDialog(task.id))
+        Button("Edit", () => openEditTaskDialog()),
+        EditTaskDialog(task.id) 
     );
 
     return container;
